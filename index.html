@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portofolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Config (harus sebelum style.css) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    '#f5f0e8',
+            blush:    '#e8c4c4',
+            rose:     '#d4a0a0',
+            mauve:    '#b07a8a',
+            dusty:    '#c9b8c2',
+            sage:     '#a8b5a0',
+            mist:     '#c8d8e0',
+            sky:      '#d6e8f0',
+            lavender: '#e0d4e8',
+            sand:     '#e8e0d0',
+            warm:     '#f8f4ee',
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            script:  ['Great Vibes', 'cursive'],
+            body:    ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav>
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <span class="font-display text-xl font-light tracking-widest text-[#4a3f3f]">My Profil</span>
+
+    <!-- Desktop menu -->
+    <div class="hidden md:flex items-center gap-8 text-xs tracking-[2px] uppercase text-[#6a5555]">
+      <a href="#hero"     class="hover:text-mauve transition-colors">Home</a>
+      <a href="#about"    class="hover:text-mauve transition-colors">About</a>
+      <a href="#skills"   class="hover:text-mauve transition-colors">Skills</a>
+      <a href="#projects" class="hover:text-mauve transition-colors">Project</a>
+      <a href="#contact"  class="hover:text-mauve transition-colors">Contact</a>
+    </div>
+
+    <!-- Hamburger button (mobile) -->
+    <button class="md:hidden flex flex-col gap-[5px] w-6" id="menuBtn" aria-label="menu">
+      <span class="h-px w-full bg-[#4a3f3f]"></span>
+      <span class="h-px w-4/5 bg-[#4a3f3f] ml-auto"></span>
+      <span class="h-px w-full bg-[#4a3f3f]"></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-4 text-xs tracking-[2px] uppercase text-[#6a5555]">
+    <a href="#hero"     class="hover:text-mauve transition-colors">Home</a>
+    <a href="#about"    class="hover:text-mauve transition-colors">About</a>
+    <a href="#skills"   class="hover:text-mauve transition-colors">Skills</a>
+    <a href="#projects" class="hover:text-mauve transition-colors">Projects</a>
+    <a href="#contact"  class="hover:text-mauve transition-colors">Contact</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════ -->
+<section id="hero" class="hero-bg min-h-screen flex items-center pt-20 pb-16 relative z-10">
+  <div class="max-w-6xl mx-auto px-6 w-full">
+
+    <!-- Celestial SVG symbol -->
+    <div class="text-center mb-6 fade-up">
+      <svg class="mx-auto opacity-30 w-12 h-12" viewBox="0 0 48 48" fill="none" stroke="#b07a8a" stroke-width="1">
+        <circle cx="24" cy="24" r="10"/>
+        <line x1="24" y1="4"  x2="24" y2="14"/>
+        <line x1="24" y1="34" x2="24" y2="44"/>
+        <line x1="4"  y1="24" x2="14" y2="24"/>
+        <line x1="34" y1="24" x2="44" y2="24"/>
+        <line x1="10" y1="10" x2="17" y2="17"/>
+        <line x1="31" y1="31" x2="38" y2="38"/>
+        <line x1="38" y1="10" x2="31" y2="17"/>
+        <line x1="17" y1="31" x2="10" y2="38"/>
+        <ellipse cx="24" cy="24" rx="4" ry="7" transform="rotate(30 24 24)"/>
+      </svg>
+    </div>
+
+    <div class="text-center">
+      <p class="section-label fade-up" style="transition-delay:.1s">Let's Go!</p>
+
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light leading-tight mt-4 fade-up" style="transition-delay:.2s">
+        Hi <em class="font-script text-mauve not-italic">There!</em> I'm<br/>
+        <span class="text-[#4a3f3f]">Niandra Zhenia</span>
+      </h1>
+
+      <p class="mt-6 text-[#7a6a6a] text-base md:text-lg font-light max-w-xl mx-auto leading-relaxed fade-up" style="transition-delay:.35s">
+        I’m interested in how communication and technology connect. I enjoy creating simple web based systems and designing interfaces that make information easier to understand.
+      </p>
+
+      <!-- <div class="moon-row justify-center mt-8 fade-up" style="transition-delay:.45s">
+        🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘 🌑
+      </div> -->
+
+      <div class="mt-8 flex flex-wrap gap-4 justify-center fade-up" style="transition-delay:.55s">
+        <a href="#projects" class="btn-outline">View My Project</a>
+        <a href="#about"    class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+
+    <!-- Decorative blobs -->
+    <div class="absolute top-1/3 left-8 w-32 h-32 rounded-full bg-blush opacity-20 blur-2xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-12 w-48 h-48 rounded-full bg-sky opacity-25 blur-3xl pointer-events-none"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FEATURED BAR
+══════════════════════════════════════ -->
+<!-- <div class="featured-bar py-5">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="section-label mb-4">Our Clients Have Been Featured In:</p>
+    <div class="flex flex-wrap items-center justify-center gap-8 opacity-60">
+      <span class="font-display text-lg font-semibold tracking-widest">Forbes</span>
+      <span class="font-body text-sm font-bold tracking-widest">Business Insider</span>
+      <span class="font-display text-lg font-semibold">Daily Mail</span>
+      <span class="font-display text-xl font-light tracking-[4px]">VOGUE</span>
+      <span class="font-display text-lg font-semibold tracking-widest">New York Times</span>
+    </div>
+  </div>
+</div> -->
+
+<!-- ══════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════ -->
+<section id="about" class="py-24 bg-warm relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div class="fade-up">
+        <!-- <p class="section-label">About Me</p> -->
+        <h2 class="font-script text-5xl text-[#4a3f3f] mt-2 mb-1">Get to Know Me!</h2>
+        <div class="ornament2 mt-4 "><span class="section-label">✦</span></div>
+        <p class="font-display text-2xl italic text-mauve mb-6">I’m Niandra Zhenia a Public Relations student exploring digital communication and technology.</p>
+        <p class="text-[#6a5555] leading-relaxed mb-4 font-light">
+          Saya memiliki pengalaman dalam mengerjakan simple web-based systems dan data monitoring, serta basic UI/UX design untuk membuat tampilan yang clear dan user-friendly.
+        </p>
+        <p class="text-[#6a5555] leading-relaxed mb-8 font-light">
+          Saat ini, saya sedang mengembangkan kemampuan di bidang communication dan digital, dengan fokus pada bagaimana informasi bisa disampaikan secara lebih terstruktur dan mudah dipahami.
+        </p>
+
+        <div class="flex items-center gap-3">
+          <span class="arrow-deco">→</span>
+          <a href="#contact" class="btn-primary text-sm">More About Me Here</a>
+        </div>
+      </div>
+
+        <!-- Oval image frame -->
+        <div class="flex justify-center fade-up" style="transition-delay:.2s">
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-full border border-rose/30"></div>
+            <div class="absolute -inset-8 rounded-full border border-dusty/20"></div>
+            <div class="oval-frame w-72 h-80 md:w-80 md:h-96 overflow-hidden shadow-lg" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: transparent;">
+<img 
+  src="images/profil.png" 
+  alt="Niandra Zhenia"
+  class="w-full h-full object-cover"
+  style="object-position: center 60%;"
+/>
+            </div>
+            <div class="absolute -top-2 right-0 text-2xl opacity-40">🌙</div>
+            <div class="absolute bottom-4 -left-4 text-xl opacity-30">✦</div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PAIN POINTS
+══════════════════════════════════════ -->
+<!-- <section class="py-20 bg-[#eee8dd] relative z-10">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 class="font-display text-3xl md:text-4xl font-light text-[#4a3f3f]">
+        Feeling like your entrepreneurial<br/>journey is a constant hustle?
+      </h2>
+      <p class="section-label mt-4">Let me guess you're currently:</p>
+    </div>
+    <div class="max-w-xl mx-auto space-y-5 fade-up" style="transition-delay:.15s">
+      <div class="flex items-start gap-4">
+        <span class="arrow-deco mt-1">→</span>
+        <p class="text-[#6a5555] font-light">… juggling multiple roles and responsibilities.</p>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="arrow-deco mt-1">→</span>
+        <p class="text-[#6a5555] font-light">… burned out and worn down from the relentless pursuit of success.</p>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="arrow-deco mt-1">→</span>
+        <p class="text-[#6a5555] font-light">… longing for a space where you can recharge and realign.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ══════════════════════════════════════
+     SKILLS SECTION
+══════════════════════════════════════ -->
+<section id="skills" class="py-24 bg-gradient-to-b from-[#e8dde8] to-warm relative z-10">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-14 fade-up">
+      <p class="section-label">Expertise</p>
+      <h2 class="font-script text-5xl text-[#4a3f3f] mt-2">Skills & Tools</h2>
+      <div class="ornament mt-3"><span class="text-mauve opacity-50">✦</span></div>
+    </div>
+
+    <div class="space-y-10">
+
+      <!-- Development Skills -->
+      <div class="fade-up">
+        <p class="section-label text-center mb-5">Development</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">HTML & CSS</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">PHP</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">Basic JavaScript</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">MySQL</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">IoT Web</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">Webflow</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">Flowchart</span>
+        </div>
+      </div>
+
+      <!-- Design Skills -->
+      <div class="fade-up" style="transition-delay:.1s">
+        <p class="section-label text-center mb-5">Design</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="skill-pill px-5 py-2 bg-sky/60 rounded-full text-sm text-[#4a3f3f] font-light border border-mist/30">UI/UX Design</span>
+          <span class="skill-pill px-5 py-2 bg-sky/60 rounded-full text-sm text-[#4a3f3f] font-light border border-mist/30">Canva</span>
+          <span class="skill-pill px-5 py-2 bg-sky/60 rounded-full text-sm text-[#4a3f3f] font-light border border-mist/30">CapCut</span>
+        </div>
+      </div>
+
+      <!-- Other Skills -->
+      <div class="fade-up" style="transition-delay:.2s">
+        <p class="section-label text-center mb-5">Other</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="skill-pill px-5 py-2 bg-lavender/60 rounded-full text-sm text-[#4a3f3f] font-light border border-dusty/30">Structured Thinking</span>
+          <span class="skill-pill px-5 py-2 bg-lavender/60 rounded-full text-sm text-[#4a3f3f] font-light border border-dusty/30">Problem Solving</span>
+          <span class="skill-pill px-5 py-2 bg-lavender/60 rounded-full text-sm text-[#4a3f3f] font-light border border-dusty/30">Adaptability</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PROJECTS — CAROUSEL SLIDER (card kecil)
+══════════════════════════════════════ -->
+<section id="projects" class="py-24 bg-warm relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
+ 
+    <!-- Header -->
+    <div class="text-center mb-16 fade-up">
+      <p class="section-label">What I've Worked On?</p>
+      <h2 class="font-script text-5xl text-[#4a3f3f] mt-4">Projects</h2>
+      <div class="ornament mt-4"><span class="section-label">✦</span></div>
+    </div>
+ 
+    <!-- Slider Wrapper -->
+    <div class="relative fade-up flex items-center" style="transition-delay:.1s">
+ 
+      <!-- Prev Button -->
+      <button id="prevBtn"
+        class="flex-shrink-0 w-10 h-10 rounded-full bg-white/80 backdrop-blur border border-rose/30 shadow-md flex items-center justify-center text-mauve hover:bg-blush transition-all mr-4"
+        style="z-index:20;"
+        aria-label="Previous">
+        &#8592;
+      </button>
+ 
+      <!-- Track Container -->
+      <div id="sliderContainer" class="overflow-hidden flex-1">
+        <div id="sliderTrack" class="flex transition-transform duration-500 ease-in-out">
+ 
+          <!-- ── SLIDE 1 ── -->
+          <div class="slide min-w-full flex justify-center items-start">
+            <div class="project-card bg-white/70 backdrop-blur rounded-2xl overflow-hidden border border-rose/20 shadow-sm w-full max-w-sm h-fit">
+              <div class="bg-gradient-to-br from-blush to-lavender p-3">
+                <div class="w-full h-44 rounded-xl overflow-hidden border-4 border-white/60 shadow-md">
+                  <img src="images/inventory.png" alt="Inventory Management System" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="section-label mb-1">Web Development</p>
+                <h3 class="font-display text-xl font-semibold text-[#4a3f3f]">Inventory Management System</h3>
+                <p class="text-sm text-[#7a6a6a] font-light mt-2 leading-relaxed">Membuat sistem inventory berbasis web untuk mengelola data barang masuk dan keluar menggunakan konsep CRUD (Create, Read, Update, Delete).</p>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- ── SLIDE 2 ── -->
+          <div class="slide min-w-full flex justify-center">
+            <div class="project-card bg-white/70 backdrop-blur rounded-2xl overflow-hidden border border-rose/20 shadow-sm w-full max-w-sm">
+              <div class="bg-gradient-to-br from-sky to-mist p-3">
+                <div class="w-full rounded-xl overflow-hidden border-4 border-white/60 shadow-md bg-white/40">
+                <img src="images/sign.png" alt="..." class="w-full h-auto object-contain block" />
+              </div>
+              </div>
+              <div class="p-6">
+                <p class="section-label mb-1">Web Development</p>
+                <h3 class="font-display text-xl font-semibold text-[#4a3f3f]">Login & Register Page</h3>
+                <p class="text-sm text-[#7a6a6a] font-light mt-2 leading-relaxed">Membuat halaman autentikasi berbasis web yang mencakup fitur registrasi dan login pengguna, dilengkapi dengan validasi input dasar serta pengelolaan akses pengguna.</p>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- ── SLIDE 3 ── -->
+          <div class="slide min-w-full flex justify-center items-start">
+            <div class="project-card bg-white/70 backdrop-blur rounded-2xl overflow-hidden border border-rose/20 shadow-sm w-full max-w-sm h-fit">
+              <div class="bg-gradient-to-br from-rose/30 to-mauve/20 p-3">
+                <div class="w-full h-44 rounded-xl overflow-hidden border-4 border-white/60 shadow-md">
+                  <img src="images/transaksi.png" alt="Transaction Data Input" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="section-label mb-1">Web Development</p>
+                <h3 class="font-display text-xl font-semibold text-[#4a3f3f]">Transaction Data Input Page</h3>
+                <p class="text-sm text-[#7a6a6a] font-light mt-2 leading-relaxed">Membuat halaman pengelolaan input data transaksi yang mencakup ID transaksi, ID barang, ID pembeli, tanggal, serta status (berhasil/gagal).</p>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- ── SLIDE 4 ── -->
+          <div class="slide min-w-full flex justify-center items-start">
+            <div class="project-card bg-white/70 backdrop-blur rounded-2xl overflow-hidden border border-rose/20 shadow-sm w-full max-w-sm">
+              <div class="bg-gradient-to-br from-sky to-mist p-3">
+              <div class="w-full rounded-xl overflow-hidden border-4 border-white/60 shadow-md bg-white/40">
+                <img src="images/production.png" alt="..." class="w-full h-auto object-contain block" />
+              </div>
+              </div>
+              <div class="p-6">
+                <p class="section-label mb-1">Web Monitoring</p>
+                <h3 class="font-display text-xl font-semibold text-[#4a3f3f]">Table Production Monitoring</h3>
+                <p class="text-sm text-[#7a6a6a] font-light mt-2 leading-relaxed">Membuat sistem monitoring sederhana untuk memantau proses produksi moulding dan pouring dengan tampilan data dan status produksi.</p>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- ── SLIDE 5 ── -->
+          <div class="slide min-w-full flex justify-center items-start">
+            <div class="project-card bg-white/70 backdrop-blur rounded-2xl overflow-hidden border border-rose/20 shadow-sm w-full max-w-sm">
+              <div class="bg-gradient-to-br from-dusty to-lavender p-3">
+                <div class="w-full rounded-xl overflow-hidden border-4 border-white/60 shadow-md bg-white/40">
+                <img src="images/gesture.png" alt="..." class="w-full h-auto object-contain block" />
+              </div>
+              </div>
+              <div class="p-6">
+                <p class="section-label mb-1">Computer Vision</p>
+                <h3 class="font-display text-xl font-semibold text-[#4a3f3f]">Hand Gesture Recognition (Python)</h3>
+                <p class="text-sm text-[#7a6a6a] font-light mt-2 leading-relaxed">Membuat project sederhana berbasis logika pemrograman untuk membaca atau memproses gesture tangan menggunakan Python dan library computer vision.</p>
+              </div>
+            </div>
+          </div>
+ 
+        </div><!-- /sliderTrack -->
+      </div><!-- /sliderContainer -->
+ 
+      <!-- Next Button -->
+      <button id="nextBtn"
+        class="flex-shrink-0 w-10 h-10 rounded-full bg-white/80 backdrop-blur border border-rose/30 shadow-md flex items-center justify-center text-mauve hover:bg-blush transition-all ml-4"
+        style="z-index:20;"
+        aria-label="Next">
+        &#8594;
+      </button>
+ 
+    </div><!-- /flex items-center -->
+ 
+    <!-- Dots + Counter -->
+    <div class="flex flex-col items-center gap-3 mt-4 fade-up" style="transition-delay:.2s">        <div id="dotsWrapper" class="flex gap-2 items-center"></div>
+      <p id="slideCounter" class="section-label">1 / 5</p>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT SECTION
+══════════════════════════════════════ -->
+<section id="contact" class="py-24 bg-[#ede4ee] relative z-10">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+
+      <!-- Kiri: Info & Social -->
+      <div class="fade-up">
+        <!-- <p class="section-label">New-Earth Leadership</p> -->
+        <h2 class="font-script text-5xl text-[#4a3f3f] mt-2 mb-1">Let's Connect!</h2>
+        <p class="font-display text-xl italic text-mauve mb-6">Feel free to reach out for collaboration or opportunities.</p>
+        <div class="ornament justify-start mb-8">
+          <span class="section-label">✦</span>
+          <span class="h-px flex-1 max-w-16 bg-rose/30"></span>
+        </div>
+
+        <!-- Social media links -->
+        <div class="space-y-4">
+          <p class="section-label">Find Me Here</p>
+          <div class="flex flex-wrap gap-3 mt-3">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/___nnzhee?igsh=MXU3MjBjMjZtdmI2Yg%3D%3D&utm_source=qr" target="_blank"
+              class="flex items-center gap-2 px-4 py-2 bg-white/60 border border-rose/20 rounded-full text-sm text-[#4a3f3f] hover:bg-blush/40 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b07a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="#b07a8a"/>
+              </svg>
+              Instagram
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/niandrazhenia" target="_blank"
+              class="flex items-center gap-2 px-4 py-2 bg-white/60 border border-rose/20 rounded-full text-sm text-[#4a3f3f] hover:bg-blush/40 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b07a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              LinkedIn
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:niandraamelia@gmail.com"
+              class="flex items-center gap-2 px-4 py-2 bg-white/60 border border-rose/20 rounded-full text-sm text-[#4a3f3f] hover:bg-blush/40 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b07a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <polyline points="2,4 12,13 22,4"/>
+              </svg>
+              Email
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+          <!-- Kanan: Contact Form -->
+          <div class="bg-white/50 backdrop-blur-sm border border-rose/20 rounded-2xl p-8 shadow-sm fade-up" style="transition-delay:.15s">
+            <p class="font-display text-2xl text-[#4a3f3f] mb-6">Send a Message</p>
+            <div class="space-y-4">
+              <div>
+                <label class="section-label block mb-2">Name</label>
+                <input id="contactName" type="text" placeholder="Your beautiful name" class="form-input" />
+              </div>
+              <div>
+                <label class="section-label block mb-2">Email</label>
+                <input id="contactEmail" type="email" placeholder="your@email.com" class="form-input" />
+              </div>
+              <div>
+                <label class="section-label block mb-2">Message</label>
+                <textarea id="contactMessage" rows="4" placeholder="Share what's in your heart…" class="form-input resize-none"></textarea>
+              </div>
+              <button onclick="handleSubmit()" class="btn-primary w-full text-center mt-2">
+                Send With Love →
+              </button>
+            </div>
+            <p id="formMsg" class="text-center text-sm text-mauve mt-4 hidden">
+              ✦ Message sent! I'll be in touch soon. ✦
+            </p>
+          </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="py-10 bg-[#4a3f3f] text-[#c8b8b8] relative z-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <span class="font-script text-3xl text-[#e8c4c4]">Thank You!</span>
+    <p class="text-xs tracking-[2px] opacity-60">© 2026 · Niandra Zhenia</p>
+    <!-- <div class="moon-row text-[#c8b8b8]/40">🌑 🌒 🌕 🌘 🌑</div> -->
+  </div>
+</footer>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
