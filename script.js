@@ -116,8 +116,19 @@ async function handleSubmit() {
     updateDots();
   }
 
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
+  // Flash pink saat diklik, kembali putih setelah 600ms
+  function flashBtn(btn) {
+    btn.style.background  = '#e8c4c4';
+    btn.style.borderColor = '#d4a0a0';
+    setTimeout(() => {
+      btn.style.background  = '';
+      btn.style.borderColor = '';
+      btn.blur();
+    }, 600);
+  }
+
+  prevBtn.addEventListener('click', () => { flashBtn(prevBtn); goTo(current - 1); });
+  nextBtn.addEventListener('click', () => { flashBtn(nextBtn); goTo(current + 1); });
 
   // Touch / swipe support (mobile)
   let touchStartX = 0;
