@@ -49,7 +49,7 @@
 ══════════════════════════════════════ -->
 <nav>
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <span class="font-display text-xl font-light tracking-widest text-[#4a3f3f]">My Profil</span>
+    <span class="font-display text-xl font-light tracking-widest text-[#4a3f3f]">Z's Profile</span>
 
     <!-- Desktop menu -->
     <div class="hidden md:flex items-center gap-8 text-xs tracking-[2px] uppercase text-[#6a5555]">
@@ -112,10 +112,6 @@
         I’m interested in how communication and technology connect. I enjoy creating simple web based systems and designing interfaces that make information easier to understand.
       </p>
 
-      <!-- <div class="moon-row justify-center mt-8 fade-up" style="transition-delay:.45s">
-        🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘 🌑
-      </div> -->
-
       <div class="mt-8 flex flex-wrap gap-4 justify-center fade-up" style="transition-delay:.55s">
         <a href="#projects" class="btn-outline">View My Project</a>
         <a href="#about"    class="btn-outline">Get In Touch</a>
@@ -133,44 +129,51 @@
 ══════════════════════════════════════ -->
 <section id="about" class="py-24 bg-warm relative z-10">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="grid md:grid-cols-2 gap-16 items-center">
 
-      <!-- Text -->
-      <div class="fade-up">
-        <!-- <p class="section-label">About Me</p> -->
-        <h2 class="font-script text-5xl text-[#4a3f3f] mt-2 mb-1">Get to Know Me!</h2>
-        <div class="ornament2 mt-4 "><span class="section-label">✦</span></div>
-        <p class="font-display text-2xl italic text-mauve mb-6">I’m Niandra Zhenia a Public Relations student exploring digital communication and technology.</p>
-        <p class="text-[#6a5555] leading-relaxed mb-4 font-light">
-          Saya memiliki pengalaman dalam mengerjakan simple web-based systems dan data monitoring, serta basic UI/UX design untuk membuat tampilan yang clear dan user-friendly.
-        </p>
-        <p class="text-[#6a5555] leading-relaxed mb-8 font-light">
-          Saat ini, saya sedang mengembangkan kemampuan di bidang communication dan digital, dengan fokus pada bagaimana informasi bisa disampaikan secara lebih terstruktur dan mudah dipahami.
-        </p>
+  <!-- Text -->
+  <div class="fade-up order-2 md:order-1">
+<h2 class="font-script text-5xl text-[#4a3f3f] mt-2 mb-1 text-center md:text-left">Get to Know Me!</h2>
+<div class="ornament2 mt-4 mb-12 justify-center md:justify-start"><span class="section-label">✦</span></div>
 
-        <div class="flex items-center gap-3">
-          <span class="arrow-deco">→</span>
-          <a href="#contact" class="btn-primary text-sm">More About Me Here</a>
+        <!-- Foto hanya muncul di sini khusus mobile -->
+      <div class="flex justify-center md:hidden my-12">
+        <div class="relative overflow-visible" style="width:192px; height:224px;">
+          <div class="absolute -inset-4 rounded-full border border-rose/30"></div>
+          <div class="absolute -inset-8 rounded-full border border-dusty/20"></div>
+          <div class="oval-frame w-48 h-56 overflow-hidden" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: transparent;">
+            <img src="images/profil.png" alt="Niandra Zhenia" class="w-full h-full object-cover" style="object-position: center 55%;"/>
+          </div>
+          <div style="position:absolute; top:-8px; right:-40px; font-size:22px; opacity:0.4; z-index:10;">🌙</div>
+          <div style="position:absolute; bottom:16px; left:-40px; font-size:18px; opacity:0.3; z-index:10;">✦</div>
         </div>
       </div>
 
-        <!-- Oval image frame -->
-        <div class="flex justify-center fade-up" style="transition-delay:.2s">
-          <div class="relative">
-            <div class="absolute -inset-4 rounded-full border border-rose/30"></div>
-            <div class="absolute -inset-8 rounded-full border border-dusty/20"></div>
-            <div class="oval-frame w-72 h-80 md:w-80 md:h-96 overflow-hidden shadow-lg" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: transparent;">
-<img 
-  src="images/profil.png" 
-  alt="Niandra Zhenia"
-  class="w-full h-full object-cover"
-  style="object-position: center 55%;"
-/>
-            </div>
-            <div class="absolute -top-2 right-0 text-2xl opacity-40">🌙</div>
-            <div class="absolute bottom-4 -left-4 text-xl opacity-30">✦</div>
+    <p class="font-display text-2xl italic text-mauve mb-6">I'm Niandra Zhenia a Public Relations student exploring digital communication and technology.</p>
+    <p class="text-[#6a5555] leading-relaxed mb-4 font-light">
+      Saya memiliki pengalaman dalam mengerjakan simple web based systems dan data monitoring, serta basic UI/UX design untuk membuat tampilan yang clear dan user-friendly.
+    </p>
+    <p class="text-[#6a5555] leading-relaxed mb-8 font-light">
+      Saat ini, saya sedang mengembangkan kemampuan di bidang communication dan digital dengan fokus pada bagaimana informasi bisa disampaikan secara lebih terstruktur dan mudah dipahami.
+    </p>
+    <div class="flex items-center gap-3">
+      <!-- <span class="arrow-deco">→</span> -->
+      <a href="#contact" class=" btn-outline" style="font-size: 12px; line-height: 15px;">See More of Me</a>
+    </div>
+  </div>
+
+      <!-- Oval image frame — hanya muncul di laptop/desktop -->
+      <div class="hidden md:flex justify-center fade-up" style="transition-delay:.2s">
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-full border border-rose/30"></div>
+          <div class="absolute -inset-8 rounded-full border border-dusty/20"></div>
+          <div class="oval-frame w-72 h-80 md:w-80 md:h-96 overflow-hidden shadow-lg" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: transparent;">
+            <img src="images/profil.png" alt="Niandra Zhenia" class="w-full h-full object-cover" style="object-position: center 55%;"/>
           </div>
+          <div style="position:absolute; top:-8px; right:-15px; font-size:22px; opacity:0.4; z-index:10;">🌙</div>
+          <div style="position:absolute; bottom:16px; left:-15px; font-size:18px; opacity:0.3; z-index:10;">✦</div>
         </div>
+      </div>
 
     </div>
   </div>
@@ -193,7 +196,7 @@
       <div class="fade-up">
         <p class="section-label text-center mb-5">Development</p>
         <div class="flex flex-wrap gap-3 justify-center">
-          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">HTML & CSS</span>
+          <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20 ">HTML & CSS</span>
           <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">PHP</span>
           <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">Basic JavaScript</span>
           <span class="skill-pill px-5 py-2 bg-blush/60 rounded-full text-sm text-[#4a3f3f] font-light border border-rose/20">MySQL</span>
